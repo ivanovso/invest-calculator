@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГПД Калькулятор</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Годовой процентный доход (ГПД) калькулятор</h1>
+        <form id="calculatorForm">
+            <label for="initialInvestment">Начальная сумма вложения:</label>
+            <input type="text" id="initialInvestment" required>
+            <br>
+            <label for="startDate">Дата вложения:</label>
+            <input type="text" id="startDate" placeholder="Выберите дату" autocomplete="off" required>
+            <br>
+            <label for="finalValue">Конечная стоимость вложения:</label>
+            <input type="text" id="finalValue" required>
+            <br>
+            <label for="endDate">Дата продажи:</label>
+            <input type="text" id="endDate" placeholder="Выберите дату" autocomplete="off" required>
+            <br>
+            <button type="button" onclick="calculate()">Рассчитать</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Инициализация flatpickr для полей с датами
+        flatpickr(document.getElementById('startDate'), { dateFormat: 'd.m.Y' });
+        flatpickr(document.getElementById('endDate'), { dateFormat: 'd.m.Y' });
+    </script>
+</body>
+</html>
